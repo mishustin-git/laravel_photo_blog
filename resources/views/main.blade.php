@@ -20,10 +20,10 @@
                         <div class="intro__wrap">
                             <div class="intro__title">
                                 
-                                <h1 class="main-title">jessica bennet</h1>
+                                <h1 class="main-title">{{$title}}</h1>
                             </div>
-                            <span class="intro__text">photographer, new york</span>
-                            <button type="button" class="btn  primary">view all gallery</button>
+                            <span class="intro__text">{{$text}}</span>
+                            <button type="button" class="btn  primary">{{$button}}</button>
                         </div>
                     </div>
                 </div>
