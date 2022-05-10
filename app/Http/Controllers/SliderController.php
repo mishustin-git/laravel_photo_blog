@@ -36,6 +36,7 @@ class SliderController extends Controller
             return view('slideradd');
         }
         else if ($request->isMethod('POST')){
+            $main_slider=1;
             $request_arr = $request->all();
             if ($request->hasFile('image')) {
                 $filenameWithExt = $request->file('image')->getClientOriginalName ();
@@ -57,6 +58,7 @@ class SliderController extends Controller
             $new_slide->image_url = $fileNameToBD;
             $new_slide->slide_order=$slider_order;
             $new_slide->active=$active;
+            $new_slide->sldier_id=$main_slider;
             $new_slide->save();
             return redirect()->route('adm_main');
         }

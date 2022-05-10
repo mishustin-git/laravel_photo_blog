@@ -11,7 +11,8 @@ class MainController extends Controller
 {
     //
     public function index(){
-        $slider_images = Slider::getImageUrl();
+        $main_slider=1;
+        $slider_images = Slider::getImageUrl($main_slider);
         $title = Main::getTitle();
         $text = Main::getText();
         $button = Main::getButtonName();

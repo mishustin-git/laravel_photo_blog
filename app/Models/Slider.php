@@ -9,11 +9,18 @@ class Slider extends Model
 {
     use HasFactory;
     protected $table = 'slider';
-    static function getImageUrl(){
-        $slider_images = Slider::where('active', 1)
-               ->orderBy('slide_order')
-               ->get('image_url')
-               ->toArray();
+    static function getImageUrl($slider_id){
+        $int_slider_id = intval($slider_id);
+        $slider_images = Slider::where([
+
+            ['active', '1'],
+    
+            ['sldier_id', $int_slider_id]
+    
+        ])
+            ->orderBy('slide_order')
+            ->get('image_url')
+            ->toArray();
         return $slider_images;
     }
     static function getImageArray(int $slider_id){
