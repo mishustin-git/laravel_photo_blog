@@ -48,7 +48,11 @@ Route::post('/admin/about/update', 'App\Http\Controllers\PageAboutController@upd
 
 Route::get('/admin/services', 'App\Http\Controllers\PageServicesController@index')->middleware(['auth'])->name('adm_services');
 Route::post('/admin/services/update', 'App\Http\Controllers\PageServicesController@update');
+Route::get('/admin/services/add', 'App\Http\Controllers\ServiceController@create');
+Route::post('/admin/services/store', 'App\Http\Controllers\ServiceController@store');
+Route::get('/admin/services/edit/{id}', 'App\Http\Controllers\ServiceController@edit');
 Route::get('/admin/services/{id}', 'App\Http\Controllers\ServiceController@show');
-
+Route::get('/admin/services/delete/{id}', 'App\Http\Controllers\ServiceController@destroy');
+Route::post('/admin/services/upgrade', 'App\Http\Controllers\ServiceController@update');
 
 require __DIR__.'/auth.php';

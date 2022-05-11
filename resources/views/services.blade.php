@@ -27,96 +27,23 @@
                         {{$text}}
                     </div>
                     <div class="services-wrap">
+                        @foreach ($services as $service)
                         <div class="services">
                             <div class="services__wrap">
                                 <div class="services__img">
-                                    <img src="images/services1.jpg" alt="">
+                                    <img src="{{$service['image_url']}}" alt="">
                                 </div>
                                 <div class="services__col">
-                                    <div class="services__title">Fashion</div>
+                                    <div class="services__title">{{$service['title']}}</div>
                                     <ul class="services__list">
-                                        <li class="services__item">Fashion photography</li>
-                                        <li class="services__item">Modeling gencies</li>
-                                        <li class="services__item">Make-up for photo shoots</li>
+                                        <li class="services__item">{{$service['item1']}}</li>
+                                        <li class="services__item">{{$service['item2']}}</li>
+                                        <li class="services__item">{{$service['item3']}}</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="services">
-                            <div class="services__wrap">
-                                <div class="services__img">
-                                    <img src="images/services2.jpg" alt="">
-                                </div>
-                                <div class="services__col">
-                                    <div class="services__title">Fashion</div>
-                                    <ul class="services__list">
-                                        <li class="services__item">Fashion photography</li>
-                                        <li class="services__item">Modeling gencies</li>
-                                        <li class="services__item">Make-up for photo shoots</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="services">
-                            <div class="services__wrap">
-                                <div class="services__img">
-                                    <img src="images/services3.jpg" alt="">
-                                </div>
-                                <div class="services__col">
-                                    <div class="services__title">Fashion</div>
-                                    <ul class="services__list">
-                                        <li class="services__item">Fashion photography</li>
-                                        <li class="services__item">Modeling gencies</li>
-                                        <li class="services__item">Make-up for photo shoots</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="services">
-                            <div class="services__wrap">
-                                <div class="services__img">
-                                    <img src="images/services4.jpg" alt="">
-                                </div>
-                                <div class="services__col">
-                                    <div class="services__title">Fashion</div>
-                                    <ul class="services__list">
-                                        <li class="services__item">Fashion photography</li>
-                                        <li class="services__item">Modeling gencies</li>
-                                        <li class="services__item">Make-up for photo shoots</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="services">
-                            <div class="services__wrap">
-                                <div class="services__img">
-                                    <img src="images/services5.jpg" alt="">
-                                </div>
-                                <div class="services__col">
-                                    <div class="services__title">Fashion</div>
-                                    <ul class="services__list">
-                                        <li class="services__item">Fashion photography</li>
-                                        <li class="services__item">Modeling gencies</li>
-                                        <li class="services__item">Make-up for photo shoots</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="services">
-                            <div class="services__wrap">
-                                <div class="services__img">
-                                    <img src="images/services6.jpg" alt="">
-                                </div>
-                                <div class="services__col">
-                                    <div class="services__title">Fashion</div>
-                                    <ul class="services__list">
-                                        <li class="services__item">Fashion photography</li>
-                                        <li class="services__item">Modeling gencies</li>
-                                        <li class="services__item">Make-up for photo shoots</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </section>

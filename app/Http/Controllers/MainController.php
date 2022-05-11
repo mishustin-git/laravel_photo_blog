@@ -7,6 +7,7 @@ use App\Models\Slider;
 use App\Models\Main;
 use App\Models\PageAbout;
 use App\Models\PageServices;
+use App\Models\Service;
 use Illuminate\Support\Facades\Storage;
 
 class MainController extends Controller
@@ -43,6 +44,7 @@ class MainController extends Controller
     }
     public function services(){
         $page = PageServices::first()->toArray();
-        return view('services',['title'=>$page['title'],'text'=>$page['text']]);
+        $services = Service::all()->toArray(); 
+        return view('services',['title'=>$page['title'],'text'=>$page['text'],'services'=>$services]);
     }
 }

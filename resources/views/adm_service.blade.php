@@ -21,6 +21,10 @@
                 {{$item2}}
                 item3
                 {{$item3}}
+                <br>
+                <a href="/admin/services/delete/{{$id}}">delete</a>
+                <br>
+                <a href="/admin/services/edit/{{$id}}">edit</a>
             </div>
         </div>
     </div>

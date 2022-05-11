@@ -39,10 +39,13 @@
                         <td>{{$service['item3']}}</td>
                         <td style="display:flex;flex-direction:column">
                             <a href="/admin/services/{{$service['id']}}">show</a>
+                            <a href="/admin/services/delete/{{$service['id']}}">delete</a>
+                            <a href="/admin/services/edit/{{$service['id']}}">edit</a>
                         </td>
                     </tr>
                     @endforeach
                 </table>
+                <a href="/admin/services/add">add item</a>
             </div>
         </div>
     </div>
