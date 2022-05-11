@@ -17,17 +17,14 @@
             <section class="services-sections">
                 <div class="container">
                     <h1 class="section-title">
-                        Services
+                        {{$title}}
                     </h1>
                     <ul class="breadcrumbs">
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">Services</a></li>
+                        <li><a href="#">{{$title}}</a></li>
                     </ul>
                     <div class="services-text">
-                        As a professional photographer, I offer my clients a wide set of services they can use for the benefit of
-                        their business or to make their project look more attractive. Even if you are not a businessman, you can
-                        still find what you are looking for at my website. Feel free to browse this page to learn more about
-                        photography services I provide.
+                        {{$text}}
                     </div>
                     <div class="services-wrap">
                         <div class="services">

@@ -18,16 +18,15 @@ use Illuminate\Http\Request;
 //     return view('main');
 // });
 Route::get('/', 'App\Http\Controllers\MainController@index');
+Route::get('/about', 'App\Http\Controllers\MainController@about');
 
-Route::get('/about', function () {
-    return view('about');
-});
 Route::get('/portfolio', function () {
     return view('portfolio');
 });
-Route::get('/services', function () {
-    return view('services');
-});
+// Route::get('/services', function () {
+//     return view('services');
+// });
+Route::get('/services', 'App\Http\Controllers\MainController@services');
 Route::get('/contact', function () {
     return view('contact');
 });
@@ -37,12 +36,19 @@ Route::get('/admin', function () {
 
 Route::get('/admin/main', 'App\Http\Controllers\MainController@change')->middleware(['auth'])->name('adm_main');
 Route::get('/admin/slide', 'App\Http\Controllers\SliderController@index');
-Route::post('/admin/slide/delete', 'App\Http\Controllers\SliderController@delete');
 Route::get('/admin/slide/add', 'App\Http\Controllers\SliderController@add');
-Route::post('/admin/slide/add', 'App\Http\Controllers\SliderController@add');
 Route::get('/admin/slide/update', 'App\Http\Controllers\SliderController@update');
+Route::post('/admin/slide/add', 'App\Http\Controllers\SliderController@add');
+Route::post('/admin/slide/delete', 'App\Http\Controllers\SliderController@delete');
 Route::post('/admin/slide/update', 'App\Http\Controllers\SliderController@update');
 Route::post('/updatemain','App\Http\Controllers\MainController@update');
+// 
+Route::get('/admin/about', 'App\Http\Controllers\PageAboutController@index')->middleware(['auth'])->name('adm_about');
+Route::post('/admin/about/update', 'App\Http\Controllers\PageAboutController@update');
+
+Route::get('/admin/services', 'App\Http\Controllers\PageServicesController@index')->middleware(['auth'])->name('adm_services');
+Route::post('/admin/services/update', 'App\Http\Controllers\PageServicesController@update');
+Route::get('/admin/services/{id}', 'App\Http\Controllers\ServiceController@show');
 
 
 require __DIR__.'/auth.php';

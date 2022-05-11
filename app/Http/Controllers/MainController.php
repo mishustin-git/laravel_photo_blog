@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Slider;
 use App\Models\Main;
+use App\Models\PageAbout;
+use App\Models\PageServices;
 use Illuminate\Support\Facades\Storage;
 
 class MainController extends Controller
@@ -34,5 +36,13 @@ class MainController extends Controller
         $button = $request_arr['button'];
         Main::Change($title, $text,$button);
         return redirect()->route('adm_main');
+    }
+    public function about(){
+        $page = PageAbout::first()->toArray();
+        return view('about',['title'=>$page['title'],'text'=>$page['text'],'image_url'=>$page['image_url']]);
+    }
+    public function services(){
+        $page = PageServices::first()->toArray();
+        return view('services',['title'=>$page['title'],'text'=>$page['text']]);
     }
 }

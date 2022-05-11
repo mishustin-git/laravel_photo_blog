@@ -11,23 +11,19 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     Administrating main_page
                 </div>
-                <form method="POST" action="/admin/slide/update" style="display:flex;flex-direction:column" enctype="multipart/form-data">
+                <form method="POST" action="/admin/about/update" style="display:flex;flex-direction:column" enctype="multipart/form-data">
                     @csrf
                     <label for="title">Image:</label><br>
-                    <img id="img"src="{{$slider['image_url']}}" alt="" width="320px">
+                    <img id="img"src="{{$image_url}}" alt="" width="320px">
                     <div id="remove_img" onclick="hideImg()">Удалить изображение</div>
-                    <input type="hidden" name="image_url" value="{{$slider['image_url']}}">
+                    <input type="hidden" name="image_url" value="{{$image_url}}">
                     <input type="hidden" value="0" name="remove_img" id="input_remove_img">
-                    <input type="hidden" name="id" value="{{$slider['id']}}">
                     <input id="add_img" type="file" id="image" name="image">
-                    <label for="slider_order">slider_order:</label><br>
-                    <input type="text" id="slider_order" name="slider_order" value="{{$slider['slide_order']}}"><br>
-                    <label for="checkbox">Active:</label><br>
-                    @if ($slider['active'] == 1)
-                        <input type="checkbox" id="checkbox" name="checkbox" checked value="1"><br><br>
-                    @else
-                    <input type="checkbox" id="checkbox" name="checkbox" value="1"><br><br>
-                    @endif
+                    <label for="title">Title:</label><br>
+                    <input type="text" id="title" name="title" value="{{$title}}"><br>
+                    <label for="text">Text under title:</label><br>
+                    <input type="text" id="text" name="text" value="{{$text}}"><br><br>
+                    <!-- <input type="file" name="image"> -->
                     <input type="submit" value="Submit">
                 </form>
             </div>
